@@ -28,6 +28,12 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+gem 'autoprefixer-rails' # to automatically put in css vendor prefixes to ensure all browser understand our css
+gem 'font-awesome-sass', '~> 5.12.0' # for great icons
+gem 'simple_form' # to be able to generate easily forms from our models - https://github.com/heartcombo/simple_form
+
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

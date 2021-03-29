@@ -1,5 +1,8 @@
 # README
 
+## Features
+* Rails setup (postgres, SCSS, Simpleform, webpack, Fontawesome)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
