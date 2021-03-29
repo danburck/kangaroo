@@ -2,6 +2,9 @@
 
 ## Features
 * Rails setup (postgres, SCSS, Simpleform, webpack, Fontawesome)
+* Automted Tests with Github Actions
+* Deployment with Heroku
+* Authentification with Devise Gem
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
