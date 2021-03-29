@@ -29,10 +29,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'autoprefixer-rails' # to automatically put in css vendor prefixes to ensure all browser understand our css
+gem 'devise'
 gem 'font-awesome-sass', '~> 5.12.0' # for great icons
 gem 'simple_form' # to be able to generate easily forms from our models - https://github.com/heartcombo/simple_form
-
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
