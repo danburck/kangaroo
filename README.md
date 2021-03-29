@@ -6,6 +6,10 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
+
+## Live version
+[View here](https://git.heroku.com/cocktails-kangaroo.git)
+
 Things you may want to cover:
 
 * Ruby version
