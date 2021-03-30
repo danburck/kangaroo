@@ -1,2 +1,15 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>
+  <%= @user.email %>
+</h1>
+<ul>
+  <% @user.cocktails.each do |cocktail| %>
+    <li>
+      <%= cocktail.name %>
+    </li>
+  <% end %>
+</ul>
+
+<%= simple_form_for [ @user, @cocktail ] do |f| %>
+  <%= f.input :name %>
+  <%= f.submit %>
+<% end %>
