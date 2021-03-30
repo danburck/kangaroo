@@ -5,6 +5,7 @@
   <% @user.cocktails.each do |cocktail| %>
     <li>
       <%= cocktail.name %>
+      <%= link_to 'Edit', edit_cocktail_path(cocktail) %>
     </li>
   <% end %>
 </ul>

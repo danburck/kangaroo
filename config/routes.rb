@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :cocktails, only: [:create]
   end
+
+  resources :cocktails, only: [:edit, :update]
 end
