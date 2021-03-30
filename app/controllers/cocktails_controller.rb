@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: [:edit, :update]
+  before_action :set_cocktail, only: [:edit, :update, :destroy]
 
   def create
     @user = User.find(params[:user_id])
@@ -22,6 +22,11 @@ class CocktailsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @cocktail.destroy
+    redirect_to user_path(@cocktail.user)
   end
 
   private

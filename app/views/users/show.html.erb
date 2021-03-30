@@ -5,7 +5,13 @@
   <% @user.cocktails.each do |cocktail| %>
     <li>
       <%= cocktail.name %>
-      <%= link_to 'Edit', edit_cocktail_path(cocktail) %>
+      <% if current_user == @user  %>
+        <%= link_to 'Edit', edit_cocktail_path(cocktail) %>
+        <%= link_to 'Delete',
+          cocktail_path(cocktail),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </li>
   <% end %>
 </ul>

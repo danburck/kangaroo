@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :cocktails, only: [:create]
   end
 
-  resources :cocktails, only: [:edit, :update]
+  resources :cocktails, only: [:edit, :update, :destroy]
 end
