@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'autoprefixer-rails' # to automatically put in css vendor prefixes to ensure all browser understand our css
 gem 'devise'
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'font-awesome-sass', '~> 5.12.0' # for great icons
 gem 'geocoder'
 gem 'jquery-rails'
