@@ -1,0 +1,4 @@
+<h1>Your Bookings</h1>
+<% @bookings.each do |booking| %>
+  <%= link_to "#{booking.bartender.name} #{booking.date}", booking_path(booking) %>
+<% end %>

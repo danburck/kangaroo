@@ -4,8 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :cocktails
+  has_many :bookings
+  has_one :bartender
   has_one_attached :photo
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
 end

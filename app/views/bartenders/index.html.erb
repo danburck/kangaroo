@@ -1,9 +1,9 @@
 <h1>Bartenders</h1>
 <ul>
-  <% @users.each do |user| %>
-    <% if user.cocktails.present? %>
-      <%= link_to user.email, user_path(user)  %>
-      <% user.cocktails.each do |cocktail| %>
+  <% @bartenders.each do |bartender| %>
+    <% if bartender.cocktails.present? %>
+      <%= link_to bartender.name, bartender_path(bartender)  %>
+      <% bartender.cocktails.each do |cocktail| %>
         <%= cocktail.name %>
       <% end %>
     <% end %>

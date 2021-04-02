@@ -1,6 +1,6 @@
 class Cocktail < ApplicationRecord
-  belongs_to :user
+  belongs_to :bartender
 
+  validates :bartender, presence: true
   validates :name, presence: true
-  validates :user, presence: true
 end
