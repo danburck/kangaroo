@@ -6,6 +6,9 @@
 * Deployment with Heroku
 * Authentification with Devise Gem
 * CRUD Actions
+* Geocoding for map display
+* Search
+* Image Hosting with Active Storage and Cloudinary
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

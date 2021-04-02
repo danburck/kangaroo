@@ -17,9 +17,21 @@
     <% end %>
   </ul>
 
+  <h2>Add a Cocktail</h2>
   <%= simple_form_for [ @user, @cocktail ] do |f| %>
     <%= f.input :name %>
-    <%= f.submit %>
+    <%= submit_tag "Add Cocktail", class: "btn btn-primary" %>
+  <% end %>
+
+  <h2>Add a picture of your bar</h2>
+  <%= simple_form_for(@user) do |f| %>
+    <%= f.input :photo, as: :file %>
+    <%= submit_tag "Upload Picture", class: "btn btn-primary" %>
+  <% end %>
+  <% if @user.photo.attached? %>
+    <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
 
 </div>
+
+
