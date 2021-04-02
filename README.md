@@ -7,6 +7,7 @@
 * Authentification with Devise Gem
 * CRUD Actions
 * Geocoding for map display
+* Autocomplete Address Bar with [Algolia Search](https://community.algolia.com/places/)
 * Search
 * Image Hosting with Active Storage and Cloudinary
 

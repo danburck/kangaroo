@@ -5,8 +5,10 @@
 <%= form_tag users_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
-    class: 'form-control',
+    class: 'form-control user_address',
     placeholder: '1 Example Steet'
   %>
   <%= submit_tag 'Search', class: 'btn btn-secondary' %>
 <% end %>
+
+<%= link_to 'or view popular bartenders in Berlin', users_path %>
