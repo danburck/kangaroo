@@ -14,14 +14,18 @@
           <%= link_to "", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Bartenders", users_path, class: "nav-link" %>
+          <%= link_to "Discover Bartenders", bartenders_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <div class="avatar", id="navbarDropdown", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", alt: "avatar_image", class: "avatar" %>
           </div>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My Bar", user_path(current_user), class: "dropdown-item" %>
+            <% if  current_user.bartender.present?%>
+              <%= link_to "My Bar", bartender_path, class: "dropdown-item" %>
+            <% else %>
+              <%= link_to "Become a Bartender", new_bartender_path, class: "dropdown-item" %>
+            <% end %>
             <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>

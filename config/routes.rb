@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     resources :cocktails, only: [:create]
   end
 
+  resources :bartenders, only: [:new, :create, :index, :show, :update, :delete]
+
   resources :cocktails, only: [:edit, :update, :destroy]
 end
