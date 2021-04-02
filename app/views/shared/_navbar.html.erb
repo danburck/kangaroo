@@ -22,7 +22,7 @@
           </div>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <% if  current_user.bartender.present?%>
-              <%= link_to "My Bar", bartender_path, class: "dropdown-item" %>
+              <%= link_to "My Bar", bartender_path(current_user.bartender), class: "dropdown-item" %>
             <% else %>
               <%= link_to "Become a Bartender", new_bartender_path, class: "dropdown-item" %>
             <% end %>

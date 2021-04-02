@@ -1,2 +1,31 @@
-<h1>Bartenders#show</h1>
-<p>Find me in app/views/bartenders/show.html.erb</p>
+<h1>
+  <%= @bartender.name %>
+</h1>
+<p>
+  <%= @bartender.address %>
+</p>
+<%= cl_image_tag @bartender.photo.key, height: 300, width: 400, crop: :fill %>
+
+<h2>Cocktails</h2>
+<ul>
+  <% @bartender.cocktails.each do |cocktail| %>
+    <li>
+      <%= cocktail.name %>
+      <% if current_user == @bartender.user  %>
+        <%= link_to 'Edit', edit_cocktail_path(cocktail) %>
+        <%= link_to 'Delete',
+          cocktail_path(cocktail),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Add a Cocktail</h2>
+<%= simple_form_for [ @bartender, @cocktail ] do |f| %>
+  <%= f.input :name %>
+  <%= submit_tag "Add Cocktail", class: "btn btn-primary" %>
+<% end %>
+
+<h2>Make a Booking</h2>

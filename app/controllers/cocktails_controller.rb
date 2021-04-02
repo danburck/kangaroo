@@ -2,13 +2,13 @@ class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:edit, :update, :destroy]
 
   def create
-    @user = User.find(params[:user_id])
+    @bartender = Bartender.find(params[:bartender_id])
     @cocktail = Cocktail.new(cocktail_params)
-    @cocktail.user = @user
+    @cocktail.bartender = @bartender
     if @cocktail.save
-      redirect_to user_path(@user)
+      redirect_to @bartender
     else
-      render :show
+      render bartender_path(@bartender)
     end
   end
 
@@ -18,7 +18,7 @@ class CocktailsController < ApplicationController
   def update
     @cocktail.update(cocktail_params)
     if @cocktail.save
-      redirect_to user_path(@cocktail.user)
+      redirect_to bartender_path(@cocktail.bartender)
     else
       render :edit
     end
@@ -26,7 +26,7 @@ class CocktailsController < ApplicationController
 
   def destroy
     @cocktail.destroy
-    redirect_to user_path(@cocktail.user)
+    redirect_to bartender_path(@cocktail.bartender)
   end
 
   private

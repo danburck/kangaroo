@@ -1,4 +1,5 @@
 class BartendersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def new
     @bartender = Bartender.new
   end
@@ -14,9 +15,24 @@ class BartendersController < ApplicationController
   end
 
   def index
+    if params[:query].present?
+      @bartenders = Bartender.near(params[:query], 20)
+    else
+      @bartenders = Bartender.all
+    end
+
+    @markers = @bartenders.geocoded.map do |bartender|
+      {
+        lat: bartender.latitude,
+        lng: bartender.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { bartender: bartender })
+      }
+    end
   end
 
   def show
+    @bartender = Bartender.find(params[:id])
+    @cocktail = Cocktail.new
   end
 
   def update
@@ -30,5 +46,4 @@ class BartendersController < ApplicationController
   def bartender_params
     params.require(:bartender).permit(:name, :address, :photo)
   end
-
 end

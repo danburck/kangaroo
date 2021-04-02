@@ -1,2 +1,17 @@
-<h1>Bartenders#index</h1>
-<p>Find me in app/views/bartenders/index.html.erb</p>
+<h1>Bartenders</h1>
+<ul>
+  <% @bartenders.each do |bartender| %>
+    <% if bartender.cocktails.present? %>
+      <%= link_to bartender.name, bartender_path(bartender)  %>
+      <% bartender.cocktails.each do |cocktail| %>
+        <%= cocktail.name %>
+      <% end %>
+    <% end %>
+  <% end %>
+</ul>
+
+<div id="map"
+  style="width: 100%; height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
