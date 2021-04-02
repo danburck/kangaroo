@@ -1,2 +1,8 @@
-<h1>Bartenders#new</h1>
-<p>Find me in app/views/bartenders/new.html.erb</p>
+<h1>Create your Bartender Profile</h1>
+
+<%= simple_form_for(@bartender) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :photo, as: :file %>
+  <%= submit_tag "Create Bartender Profile", class: "btn btn-primary" %>
+<% end %>
