@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+  get 'bookings/create'
+  get 'bookings/show'
+  get 'bookings/destroy'
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'pages#home'
 
   resources :bartenders do
     resources :cocktails, only: [:create]
+    resources :bookings, only: [:create]
   end
 
   resources :cocktails, only: [:edit, :update, :destroy]
+  resources :bookings, only: [:show, :index, :destroy]
 end

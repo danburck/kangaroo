@@ -25,7 +25,11 @@
 <h2>Add a Cocktail</h2>
 <%= simple_form_for [ @bartender, @cocktail ] do |f| %>
   <%= f.input :name %>
-  <%= submit_tag "Add Cocktail", class: "btn btn-primary" %>
+  <%= submit_tag 'Add Cocktail', class: 'btn btn-primary' %>
 <% end %>
 
 <h2>Make a Booking</h2>
+<%= simple_form_for [@bartender, @booking] do |f| %>
+  <%= f.input :date, placeholder: "01.01.2021" %>
+  <%= submit_tag 'Book Bartender', class: 'btn btn-primary' %>
+<% end %>
