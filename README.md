@@ -11,6 +11,7 @@
 * Search
 * Image Hosting with Active Storage and Cloudinary
 * Animated typing with [Typed.js](https://mattboldt.com/demos/typed-js/)
+* [Pry-byebug Debugger](https://github.com/deivid-rodriguez/pry-byebug)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

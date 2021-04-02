@@ -35,6 +35,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'font-awesome-sass', '~> 5.12.0' # for great icons
 gem 'geocoder'
 gem 'jquery-rails'
+gem 'pry-byebug'
 gem 'simple_form' # to be able to generate easily forms from our models - https://github.com/heartcombo/simple_form
 
 group :development, :test do
