@@ -16,9 +16,9 @@ class BartendersController < ApplicationController
 
   def index
     if params[:query].present?
-      @bartenders = Bartender.near(params[:query], 20)
+      @bartenders = Bartender.near(params[:query], 20).where.not(cocktails: nil)
     else
-      @bartenders = Bartender.all
+      @bartenders = Bartender.where.not(cocktails: nil)
     end
 
     @markers = @bartenders.geocoded.map do |bartender|
@@ -37,6 +37,9 @@ class BartendersController < ApplicationController
   end
 
   def update
+    @bartender = Bartender.find(params[:id])
+    @bartender.update(bartender_params)
+    redirect_to @bartender
   end
 
   def destroy
