@@ -28,10 +28,12 @@
   <% end %>
 </ul>
 
-<h2>Add a Cocktail</h2>
-<%= simple_form_for [ @bartender, @cocktail ] do |f| %>
-  <%= f.input :name %>
-  <%= submit_tag 'Add Cocktail', class: 'btn btn-primary' %>
+<% if current_user == @bartender.user %>
+  <h2>Add a Cocktail</h2>
+  <%= simple_form_for [ @bartender, @cocktail ] do |f| %>
+    <%= f.input :name %>
+    <%= submit_tag 'Add Cocktail', class: 'btn btn-primary' %>
+  <% end %>
 <% end %>
 
 <h2>Make a Booking</h2>
