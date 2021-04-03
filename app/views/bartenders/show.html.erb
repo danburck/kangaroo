@@ -5,6 +5,12 @@
   <%= @bartender.address %>
 </p>
 <%= cl_image_tag @bartender.photo.key, height: 300, width: 400, crop: :fill %>
+<% if  @bartender.user == current_user %>
+  <%= simple_form_for(@bartender, remote: true) do |f| %>
+    <%= f.input :photo, as: :file %>
+    <%= submit_tag 'Update Picture', class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
 
 <h2>Cocktails</h2>
 <ul>

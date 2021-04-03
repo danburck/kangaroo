@@ -1,2 +1,4 @@
-<h2><%= bartender.name %></h2>
-<p><%= bartender.address %></p>
+<%= link_to bartender_path(bartender) do %>
+  <h2><%= bartender.name %></h2>
+  <p><%= bartender.address %></p>
+<% end %>
