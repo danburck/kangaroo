@@ -2,13 +2,42 @@ require 'rails_helper'
 
 RSpec.describe Bartender, type: :model do
   let(:user) { User.create(email: 'dan@kangaroo.com', password: '123456') }
-  let(:bartender) { Bartender.create(user: user, name: "Dan's", address: 'Bouchéstr 2, 12059 Berlin')}
 
-  describe '#name' do
-    subject { bartender.name }
+  describe '#initialize' do
+    it 'has a user' do
+      bartender = Bartender.new(
+        user: nil,
+        name: "Dan's",
+        address: 'Bouchéstr 2, 12059 Berlin'
+      )
+      expect(bartender).to_not be_valid
 
-    it "returns the bartender's name" do
-      expect(subject).to eq("Dan's")
+      bartender.user = user
+      expect(bartender).to be_valid
+    end
+
+    it 'has a name' do
+      bartender = Bartender.new(
+        user: user,
+        name: "",
+        address: 'Bouchéstr 2, 12059 Berlin'
+      )
+      expect(bartender).to_not be_valid
+
+      bartender.name = "Dan's"
+      expect(bartender).to be_valid
+    end
+
+    it 'has a address' do
+      bartender = Bartender.new(
+        user: user,
+        name: "Dan's",
+        address: ''
+      )
+      expect(bartender).to_not be_valid
+
+      bartender.address = 'Bouchéstr 2, 12059 Berlin'
+      expect(bartender).to be_valid
     end
   end
 end
