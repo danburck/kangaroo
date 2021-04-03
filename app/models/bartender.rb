@@ -1,7 +1,7 @@
 class Bartender < ApplicationRecord
   belongs_to :user
   has_many :bookings
-  has_many :cocktails
+  has_many :cocktails, dependent: :destroy
 
   has_one_attached :photo
   geocoded_by :address
