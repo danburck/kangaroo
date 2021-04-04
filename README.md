@@ -54,7 +54,7 @@ Returns a list of bartenders, by default sorted by reverse creation date.
     "longitude": 13.41784
   }
   {
-    // ...
+    //
   }
 ]
 
@@ -79,7 +79,7 @@ Returns the details of a Bartender.
       "name": "string"
     },
     {
-      // ...
+      //
     }
   ]
 }
