@@ -1,9 +1,12 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.where(user: current_user)
+    # @bookings = Booking.where(user: current_user)
+    @bookings = policy_scope(Booking)
   end
+
   def create
     @booking = Booking.new(booking_params)
+    authorize @booking
     @booking.user = current_user
     @booking.bartender = Bartender.find(params[:bartender_id])
     if @booking.save
@@ -15,6 +18,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def destroy

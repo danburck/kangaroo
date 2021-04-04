@@ -2,10 +2,12 @@ class BartendersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def new
     @bartender = Bartender.new
+    authorize @bartender
   end
 
   def create
     @bartender = Bartender.new(bartender_params)
+    authorize @bartender
     @bartender.user = current_user
     if @bartender.save
       redirect_to bartender_path(@bartender)
@@ -32,6 +34,7 @@ class BartendersController < ApplicationController
 
   def show
     @bartender = Bartender.find(params[:id])
+    authorize @bartender
     @cocktail = Cocktail.new
     @booking = Booking.new
   end
