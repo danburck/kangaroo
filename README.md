@@ -38,7 +38,7 @@ Authorization:
 
 ### Bartenders
 
-#### GET /api/v1/bartenders/ - List Bartenders
+#### GET /api/v1/bartenders/
 Returns a list of bartenders, by default sorted by reverse creation date.
 
 ```json
@@ -54,13 +54,13 @@ Returns a list of bartenders, by default sorted by reverse creation date.
     "longitude": 13.41784
   }
   {
-    //
+  ...
   }
 ]
 
 ```
 
-#### GET /api/v1/bartenders/{bartender_id}/ - Get Bartender Details
+#### GET /api/v1/bartenders/{bartender_id}/
 Returns the details of a Bartender.
 
 ```json
@@ -77,16 +77,13 @@ Returns the details of a Bartender.
     {
       "id": 6,
       "name": "string"
-    },
-    {
-      //
     }
   ]
 }
 
 ```
 
-#### POST /api/v1/bartenders/ - Create Bartender
+#### POST /api/v1/bartenders/
 This endpoint allows you to create a bartender for a user.
 
 ```json
