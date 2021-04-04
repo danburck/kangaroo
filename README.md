@@ -8,12 +8,14 @@
 * Authorization with [Pundit](https://github.com/varvet/pundit)
 * CRUD Actions
 * [Geocoding](https://github.com/alexreisner/geocoder) for map display
+* [Simpleform](https://github.com/heartcombo/simple_form)
 * Search
 * Autocomplete Address Bar with [Algolia Search](https://community.algolia.com/places/)
 * Image Hosting with Active Storage and [Cloudinary](https://github.com/cloudinary)
 * Animated typing with [Typed.js](https://mattboldt.com/demos/typed-js/)
 * [Pry-byebug Debugger](https://github.com/deivid-rodriguez/pry-byebug)
 * AJAX
+* RESTful API
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
