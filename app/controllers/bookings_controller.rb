@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
   def index
-    # @bookings = Booking.where(user: current_user)
     @bookings = policy_scope(Booking)
   end
 
@@ -17,8 +16,9 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find(params[:id])
-    authorize @booking
+    # @booking = Booking.find(params[:id])
+    # @booking = policy_scope(Booking).find(params[:id])
+    @booking = authorize Booking.find(params[:id])
   end
 
   def destroy
