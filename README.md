@@ -53,9 +53,6 @@ Returns a list of bartenders, by default sorted by reverse creation date.
     "latitude": 52.4989273,
     "longitude": 13.41784
   }
-  {
-  ...
-  }
 ]
 
 ```
