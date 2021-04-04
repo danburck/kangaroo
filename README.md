@@ -4,12 +4,13 @@
 * Rails setup (postgres, SCSS, Simpleform, webpack, Fontawesome)
 * Automted Tests with Github Actions
 * Deployment with Heroku
-* Authentification with Devise Gem
+* Authentification with [Devise](https://github.com/heartcombo/devise)
+* Authorization with [Pundit](https://github.com/varvet/pundit)
 * CRUD Actions
-* Geocoding for map display
-* Autocomplete Address Bar with [Algolia Search](https://community.algolia.com/places/)
+* [Geocoding](https://github.com/alexreisner/geocoder) for map display
 * Search
-* Image Hosting with Active Storage and Cloudinary
+* Autocomplete Address Bar with [Algolia Search](https://community.algolia.com/places/)
+* Image Hosting with Active Storage and [Cloudinary](https://github.com/cloudinary)
 * Animated typing with [Typed.js](https://mattboldt.com/demos/typed-js/)
 * [Pry-byebug Debugger](https://github.com/deivid-rodriguez/pry-byebug)
 * AJAX

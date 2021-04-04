@@ -24,7 +24,9 @@
             <% if  current_user.bartender.present?%>
               <%= link_to "My Bar", bartender_path(current_user.bartender), class: "dropdown-item" %>
             <% else %>
-              <%= link_to "Become a Bartender", new_bartender_path, class: "dropdown-item" %>
+              <% if policy(Bartender).create? %>
+                <%= link_to "Become a Bartender", new_bartender_path, class: "dropdown-item" %>
+              <% end %>
             <% end %>
 
             <%= link_to "Your Bookings", bookings_path, class: "dropdown-item" %>
