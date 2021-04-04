@@ -18,9 +18,9 @@ class BartendersController < ApplicationController
 
   def index
     if params[:query].present?
-      @bartenders = Bartender.near(params[:query], 20).where.not(cocktails: nil)
+      @bartenders = policy_scope(Bartender).near(params[:query], 20).where.not(cocktails: nil)
     else
-      @bartenders = Bartender.where.not(cocktails: nil)
+      @bartenders = policy_scope(Bartender).where.not(cocktails: nil)
     end
 
     @markers = @bartenders.geocoded.map do |bartender|
