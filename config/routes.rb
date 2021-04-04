@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  get 'bookings/create'
-  get 'bookings/show'
-  get 'bookings/destroy'
   devise_for :users
   root 'pages#home'
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :bartenders, only: [:index, :show, :update, :create, :destroy]
+    end
+  end
 
   resources :bartenders do
     resources :cocktails, only: [:create]

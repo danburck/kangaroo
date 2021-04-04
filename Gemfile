@@ -37,7 +37,8 @@ gem 'geocoder'
 gem 'jquery-rails'
 gem 'pry-byebug'
 gem 'pundit'
-gem 'simple_form' # to be able to generate easily forms from our models - https://github.com/heartcombo/simple_form
+gem 'simple_form'
+gem 'simple_token_authentication'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
